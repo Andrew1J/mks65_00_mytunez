@@ -24,8 +24,8 @@ struct song * insert_node(struct song *s, char *t, char *a);
 void print_list(struct song *s);
 
 // Finding
-struct song * find_node(struct song *s, char *t, char *a);
-struct song * find_artists_song(struct song *s, char *t, char*a);
+struct song * find_song(struct song *s, char *t, char *a);
+struct song * find_artists_song(struct song *s, char *title, char *artist);
 struct song * random_song(struct song *front);
 
 // Removing
