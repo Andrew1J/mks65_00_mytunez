@@ -25,17 +25,17 @@ struct song * find_node(struct song *s, char *t, char *a) {
 }
 
 // Finds first song of an artist given artist's name
-struct song * artists_song(struct song *s, char *t, char*a) {
+struct song * find_artists_song(struct song *s, char *t, char*a) {
     return 0;
 }
 
 // Returns random node
-struct song * random_node(struct song *front) {
+struct song * random_song(struct song *front) {
     return 0;
 }
 
 // Removes node and returns beginning of linked list
-struct song * remove_student(struct song *front, char *t, char *a) {
+struct song * remove_song(struct song *front, char *t, char *a) {
     return 0;
 }
 
@@ -45,12 +45,12 @@ struct song * free_list(struct song *s) {
 }
 
 // Prints individual song
-void print_node(struct song *s) {
+void print_song(struct song *s) {
     printf("Artist: %s\t Song: %s\t\n", s->artist, s->title);
 }
 
 // Creates node
-struct song * make_node(char *t, char *a) {
+struct song * make_song(char *t, char *a) {
     struct song *s = malloc(sizeof(struct song));
 
     strcpy(s->title, t);

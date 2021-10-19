@@ -8,8 +8,11 @@
 
 int main() {
     srand(time(NULL));
-    struct song *linked_list = make_node("DW","Baby");
-    print_node(linked_list);
+
+    struct song *linked_list = make_song("DW","Baby");
+    print_song(linked_list);
+
     free(linked_list);
+    
     return 0;
 }
