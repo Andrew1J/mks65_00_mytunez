@@ -38,7 +38,7 @@ void print_list(struct song *s) {
 //
 // Author: Dylan Hu
 struct song * find_song(struct song *s, char *t, char *a) {
-    while (s && strcmp(s->title, t) && strcmp(s->artist, a)) {
+    while (s && (strcmp(s->title, t) || strcmp(s->artist, a))) {
         s = s->next;
     }
 
@@ -49,7 +49,7 @@ struct song * find_song(struct song *s, char *t, char *a) {
 // Finds first song of an artist given artist's name
 //
 // Author: Dylan Hu
-struct song * find_artists_song(struct song *s, char *t, char*a) {
+struct song * find_artists_song(struct song *s, char *a) {
     while (s && strcmp(s->artist, a)) {
         s = s->next;
     }
