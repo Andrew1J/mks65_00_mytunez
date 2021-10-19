@@ -30,8 +30,8 @@ struct song * remove_student(struct song *front, char *t, char *a);
 struct song * free_list(struct song *s);
 
 //helper functions
-void print_song(struct song *s);
+void print_node(struct song *s);
 
-struct song * make_song(char *t, char *a);
+struct song * make_node(char *t, char *a);
 
 #endif

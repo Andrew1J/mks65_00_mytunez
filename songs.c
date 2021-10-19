@@ -45,11 +45,17 @@ struct song * free_list(struct song *s) {
 }
 
 // Prints individual song
-void print_song(struct song *s) {
-    return;
+void print_node(struct song *s) {
+    printf("Artist: %s\t Song: %s\t\n", s->artist, s->title);
 }
 
 // Creates node
-struct song * make_song(char *t, char *a) {
-    return 0;
+struct song * make_node(char *t, char *a) {
+    struct song *s = malloc(sizeof(struct song));
+
+    strcpy(s->title, t);
+    strcpy(s->artist, a);
+    s->next = NULL;
+
+    return s;
 }
