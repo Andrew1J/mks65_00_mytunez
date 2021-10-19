@@ -107,3 +107,8 @@ struct song * make_song(char *t, char *a) {
 
     return s;
 }
+
+// Compares two songs
+int song_cmp(struct song *a, struct song *b) {
+    return 0;
+}

@@ -35,5 +35,6 @@ struct song * free_list(struct song *s);
 // Helper Functions
 void print_song(struct song *s);
 struct song * make_song(char *t, char *a);
+int song_cmp(struct song *a, struct song *b);
 
 #endif
