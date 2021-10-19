@@ -9,10 +9,11 @@
 int main() {
     srand(time(NULL));
 
-    struct song *linked_list = make_song("DW","Baby");
-    print_song(linked_list);
+    struct song *songs = make_song("DW","Baby");
+    print_song(songs);
 
-    free(linked_list);
+    songs = free_list(songs);
+    printf("Freed Song List: %p\n", songs);
     
     return 0;
 }

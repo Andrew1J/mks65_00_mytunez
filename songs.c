@@ -65,8 +65,18 @@ struct song * remove_song(struct song *front, char *t, char *a) {
 
 
 // Frees list
+//
+// Author: Dylan Hu (stolen from u Andrew lol)
 struct song * free_list(struct song *s) {
-    return 0;
+    struct song *temp;
+
+    while (s) {
+        temp = s->next;
+        free(s);
+        s = temp;
+    }
+
+    return temp;
 }
 
 
