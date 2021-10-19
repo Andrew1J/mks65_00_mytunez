@@ -6,8 +6,14 @@
 
 
 // Inserts node at front of linked list
+// 
+// Author: Dylan Hu
 struct song * insert_front(struct song *s, char *t, char *a) {
-    return 0;
+    struct song *new_song = make_song(t, a);
+
+    new_song->next = s;
+
+    return new_song;
 }
 
 
