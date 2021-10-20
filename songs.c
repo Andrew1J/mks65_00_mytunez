@@ -108,6 +108,7 @@ struct song * make_song(char *t, char *a) {
     return s;
 }
 
+
 // Compares two songs by artist first,
 // then if they have the same artist it
 // compares by title
