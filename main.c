@@ -95,10 +95,18 @@ void linked_list_test() {
     }
 
     // random_song tests
+    printf("====================================\n\n");
+    printf("List of Songs:\n");
+    print_list(songs);
+    printf("\nRandom Song:\n");
+    print_song(random_song(songs));
 
     // remove_song tests
+    printf("====================================\n\n");
+    printf("List of Songs:\n");
     print_list(songs);
     printf("\n");
+    printf("List With Removed Song:\n");
     songs = remove_song(songs,"yellow ledbetter", "pearl jam");
     print_list(songs);
 
