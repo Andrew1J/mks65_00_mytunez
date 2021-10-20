@@ -94,6 +94,25 @@ void linked_list_test() {
         printf("artist not found\n");
     }
 
+    // song_cmp tests
+    printf("====================================\n\n");
+    printf("Testing songcmp (helper function):\n");
+    
+    printf("Comparing [pearl jam: even flow] to [pearl jam: even flow]\n");
+    struct song *ef_pj = find_song(songs, "even flow", "pearl jam");
+    printf("%d\n", song_cmp(ef_pj, ef_pj));
+
+    printf("Comparing [pearl jam: even flow] to [pearl jam: alive]\n");
+    struct song *a_pj = find_song(songs, "alive", "pearl jam");
+    printf("%d\n", song_cmp(ef_pj, a_pj));
+
+    printf("Comparing [pearl jam: alive] to [pearl jam: even flow]\n");
+    printf("%d\n", song_cmp(a_pj, ef_pj));
+
+    printf("Comparing [pearl jam: even flow] to [pink floyd: time]\n");
+    struct song *t_pf = find_song(songs, "time", "pink floyd");
+    printf("%d\n", song_cmp(ef_pj, t_pf));
+
     // random_song tests
     printf("====================================\n\n");
     printf("List of Songs:\n");
