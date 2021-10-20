@@ -108,7 +108,11 @@ struct song * make_song(char *t, char *a) {
     return s;
 }
 
-// Compares two songs
+// Compares two songs by artist first,
+// then if they have the same artist it
+// compares by title
 int song_cmp(struct song *a, struct song *b) {
-    return 0;
+    int artist_diff = strcmp(a->artist, b->artist);
+    if (artist_diff) return artist_diff;
+    return strcmp(a->title, b->title);
 }
