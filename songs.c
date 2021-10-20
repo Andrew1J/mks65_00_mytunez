@@ -59,15 +59,19 @@ struct song * random_song(struct song *front) {
 // Removes node and returns beginning of linked list
 struct song * remove_song(struct song *front, char *t, char *a) {
     struct song *temp, *beg=front;
-    if (front->title==t && front->artist==a) beg = front->next;
-    while(front!=NULL && (front->title!=t||front->artist!=a)) {
+
+    if (front->title == t && front->artist == a) beg = front->next;
+    
+    while (front != NULL && (front->title != t || front->artist != a)) {
         temp = front;
         front = front->next;
     }
-    if(front!=NULL){
+    
+    if (front != NULL){
         temp->next = front->next;
         free(front);
     }
+    
     return beg;
 }
 
