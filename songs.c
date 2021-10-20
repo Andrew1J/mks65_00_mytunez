@@ -52,7 +52,18 @@ struct song * find_artists_song(struct song *s, char *a) {
 
 // Returns random node
 struct song * random_song(struct song *front) {
-    return 0;
+    int len_list = 0, rand_ind, ind;
+    struct song * rand_song = front;
+    while (front) {
+        front = front->next;
+        len_list++;
+    }
+    srand(time(NULL));
+    rand_ind = rand()%len_list;
+    for(ind=0;ind<=rand_ind;ind++) {
+        rand_song = rand_song->next;
+    }
+    return rand_song;
 }
 
 
