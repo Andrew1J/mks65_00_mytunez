@@ -17,7 +17,36 @@ struct song * insert_front(struct song *s, char *t, char *a) {
 
 // Inserts nodes alphabetically
 struct song * insert_node(struct song *s, char *t, char *a) {
-    return 0;
+    struct song *beg = s;
+    struct song *new_song = make_song(t,a);
+
+    // Case when linkedlist is empty or node is less than first element of list
+    if(!s || song_cmp(new_song,s)<=0) {
+        s = insert_front(s,t,a);
+        return s;
+    }
+
+    // Case when linkedlist size > 2
+    while(s->next) {
+        if(song_cmp(new_song,s->next) > 0) {
+            s = s->next;
+        } else {
+            new_song->next = s->next;
+            s->next = new_song;
+            return beg;
+        }
+    }
+
+    // Case when linked list size is 1 or node belongs at end of linkedlist
+    if(song_cmp(new_song,s)>0){
+        s->next = new_song;
+    } else {
+        s = insert_front(s,t,a);
+        return s;
+    }
+
+    // Return iterator to beginning of linkedlist
+    return beg;
 }
 
 
@@ -60,7 +89,7 @@ struct song * random_song(struct song *front) {
     }
     srand(time(NULL));
     rand_ind = rand()%len_list;
-    for(ind=0;ind<=rand_ind;ind++) {
+    for(ind=0;ind<rand_ind;ind++) {
         rand_song = rand_song->next;
     }
     return rand_song;

@@ -20,6 +20,8 @@ int main() {
 // Tests for the linked list part
 void linked_list_test() {
     // insert_front tests
+    printf("====================================\n\n");
+    printf("Testing insert_front:\n");
     struct song *songs = make_song("street spirit (fade out)", "radiohead");
     songs = insert_front(songs, "paranoid android", "radiohead");
     songs = insert_front(songs, "time", "pink floyd");
@@ -28,12 +30,24 @@ void linked_list_test() {
     songs = insert_front(songs, "even flow", "pearl jam");
     songs = insert_front(songs, "alive", "pearl jam");
     songs = insert_front(songs, "thunderstruck", "ac/dc");
+    print_list(songs);
 
-    // Linked List tests
-    printf("LINKED LIST TESTS\n");
+    // insert_node tests
     printf("====================================\n\n");
+    printf("Testing insert_node:\n");
+    struct song *songs2 = 0;
+    songs2 = insert_node(songs2, "even flow", "pearl jam");
+    songs2 = insert_node(songs2, "street spirit (fade out)", "radiohead");
+    songs2 = insert_node(songs2, "thunderstruck", "ac/dc");
+    songs2 = insert_node(songs2, "time", "pink floyd");
+    songs2 = insert_node(songs2, "yellow ledbetter", "pearl jam");
+    songs2 = insert_node(songs2, "even flow", "pearl jam");
+    songs2 = insert_node(songs2, "alive", "pearl jam");
+    songs2 = insert_node(songs2, "paranoid android", "radiohead");
+    print_list(songs2);
 
     // print_list tests
+    printf("====================================\n\n");
     printf("Testing print_list:\n");
     print_list(songs);
 
@@ -97,7 +111,7 @@ void linked_list_test() {
     // song_cmp tests
     printf("====================================\n\n");
     printf("Testing songcmp (helper function):\n");
-    
+
     printf("Comparing [pearl jam: even flow] to [pearl jam: even flow]\n");
     struct song *ef_pj = find_song(songs, "even flow", "pearl jam");
     printf("%d\n", song_cmp(ef_pj, ef_pj));
@@ -115,6 +129,7 @@ void linked_list_test() {
 
     // random_song tests
     printf("====================================\n\n");
+    printf("Testing random_song:\n");
     printf("List of Songs:\n");
     print_list(songs);
     printf("\nRandom Song:\n");
@@ -122,6 +137,7 @@ void linked_list_test() {
 
     // remove_song tests
     printf("====================================\n\n");
+    printf("Testing remove_song:\n");
     printf("List of Songs:\n");
     print_list(songs);
     printf("\n");
