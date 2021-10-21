@@ -27,7 +27,6 @@ void linked_list_test() {
     songs = insert_front(songs, "time", "pink floyd");
     songs = insert_front(songs, "yellow ledbetter", "pearl jam");
     songs = insert_front(songs, "even flow", "pearl jam");
-    songs = insert_front(songs, "even flow", "pearl jam");
     songs = insert_front(songs, "alive", "pearl jam");
     songs = insert_front(songs, "thunderstruck", "ac/dc");
     print_list(songs);
@@ -41,7 +40,6 @@ void linked_list_test() {
     songs2 = insert_node(songs2, "thunderstruck", "ac/dc");
     songs2 = insert_node(songs2, "time", "pink floyd");
     songs2 = insert_node(songs2, "yellow ledbetter", "pearl jam");
-    songs2 = insert_node(songs2, "even flow", "pearl jam");
     songs2 = insert_node(songs2, "alive", "pearl jam");
     songs2 = insert_node(songs2, "paranoid android", "radiohead");
     print_list(songs2);
