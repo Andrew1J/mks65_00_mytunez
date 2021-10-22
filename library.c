@@ -6,7 +6,7 @@ struct song ** make_library() {
     return library;
 }
 
-struct song ** add_song(struct song **library) {
+struct song ** add_song(struct song **library, struct song *new_song) {
     return;
 }
 
