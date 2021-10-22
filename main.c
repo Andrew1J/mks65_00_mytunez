@@ -254,6 +254,8 @@ void library_test() {
     printf("Testing delete_song:\n");
     printf("Removing [pearl jam, yellow ledbetter]:\n");
     lib = delete_song(lib,"yellow ledbetter", "pearl jam");
+    printf("Removing [pearl jam, yellow ledbetter]:\n");
+    lib = delete_song(lib,"alive", "pearl jam");
     print_library(lib);
     printf("\n");
 }
