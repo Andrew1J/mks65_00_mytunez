@@ -10,9 +10,6 @@ struct song {
     struct song *next;
 };
 
-//struct song* library[27];
-
-//
 // Function Headers
 //
 
