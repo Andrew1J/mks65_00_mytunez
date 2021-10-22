@@ -22,11 +22,12 @@ struct song * find_song_in_library(struct song **library, char *title, char *art
     return find_song(library[ind], title, artist);
 }
 
-/*struct song * find_artist_in_library(struct song **library, char *artist) {
-    return;
+struct song * find_artist_in_library(struct song **library, char *artist) {
+    int ind = conv_artist_to_index(artist);
+    return find_artists_song(library[ind], artist);
 }
 
-void print_letter(struct song **library, char letter) {
+/*void print_letter(struct song **library, char letter) {
     return;
 }
 

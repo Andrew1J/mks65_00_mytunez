@@ -187,6 +187,7 @@ void library_test() {
     print_song(search);
     if (search) {
         printf("node found! %s: %s\n", search->artist, search->title);
+        printf("\n");
     } else {
         printf("node not found\n");
     }
@@ -195,8 +196,47 @@ void library_test() {
     search = find_song_in_library(lib, "daughter", "pearl jam");
     if (search) {
         printf("node found! %s: %s\n", search->artist, search->title);
+        printf("\n");
     } else {
         printf("node not found\n");
+    }
+    printf("\n");
+
+    // find_artist_in_library test
+    printf("====================================\n\n");
+    printf("Testing find_artist_in_library:\n");
+    printf("looking for [pink floyd]\n");
+    search = find_artist_in_library(lib, "pink floyd");
+    print_song(search);
+    if (search) {
+        printf("artist found! ");
+        print_list(search);
+        printf("\n");
+    }
+    else {
+        printf("artist not found\n");
+    }
+
+    printf("looking for [pearl jam]\n");
+    search = find_artist_in_library(lib, "pearl jam");
+    if (search) {
+        printf("artist found! ");
+        print_list(search);
+        printf("\n");
+    }
+    else {
+        printf("artist not found\n");
+    }
+
+    printf("looking for [presidents of the united states of america]\n");
+    search = find_artist_in_library(lib, "presidents of the united states of america");
+    if (search) {
+        printf("artist found! ");
+        print_list(search);
+        printf("\n");
+    }
+    else {
+        printf("artist not found\n");
     }
     printf("\n");
 }

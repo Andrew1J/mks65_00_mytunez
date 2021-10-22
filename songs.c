@@ -64,6 +64,7 @@ struct song * find_song(struct song *s, char *t, char *a) {
     while (s && (strcmp(s->title, t) || strcmp(s->artist, a))) {
         s = s->next;
     }
+    
     return s;
 }
 
