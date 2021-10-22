@@ -30,6 +30,7 @@ void linked_list_test() {
     songs = insert_front(songs, "alive", "pearl jam");
     songs = insert_front(songs, "thunderstruck", "ac/dc");
     print_list(songs);
+    printf("\n");
 
     // insert_node tests
     printf("====================================\n\n");
@@ -43,16 +44,19 @@ void linked_list_test() {
     songs2 = insert_node(songs2, "alive", "pearl jam");
     songs2 = insert_node(songs2, "paranoid android", "radiohead");
     print_list(songs2);
+    printf("\n");
 
     // print_list tests
     printf("====================================\n\n");
     printf("Testing print_list:\n");
     print_list(songs);
+    printf("\n");
 
     // print_song tests
     printf("====================================\n\n");
     printf("Testing print_song:\n");
     print_song(songs);
+    printf("\n");
 
     // find_song tests
     printf("====================================\n\n");
@@ -72,6 +76,7 @@ void linked_list_test() {
     } else {
         printf("node not found\n");
     }
+    printf("\n");
 
     // find_artists_song tests
     printf("====================================\n\n");
@@ -105,6 +110,7 @@ void linked_list_test() {
     else {
         printf("artist not found\n");
     }
+    printf("\n");
 
     // song_cmp tests
     printf("====================================\n\n");
@@ -124,6 +130,7 @@ void linked_list_test() {
     printf("Comparing [pearl jam: even flow] to [pink floyd: time]\n");
     struct song *t_pf = find_song(songs, "time", "pink floyd");
     printf("%d\n", song_cmp(ef_pj, t_pf));
+    printf("\n");
 
     // random_song tests
     printf("====================================\n\n");
@@ -132,6 +139,7 @@ void linked_list_test() {
     print_list(songs);
     printf("\nRandom Song:\n");
     print_song(random_song(songs));
+    printf("\n");
 
     // remove_song tests
     printf("====================================\n\n");
@@ -142,6 +150,7 @@ void linked_list_test() {
     printf("List With Removed Song:\n");
     songs = remove_song(songs,"yellow ledbetter", "pearl jam");
     print_list(songs);
+    printf("\n");
 
 }
 
@@ -149,10 +158,25 @@ void linked_list_test() {
 // Tests for the library
 void library_test() {
 
+    struct library **lib = make_library();
+
     // conv_artist_to_index test
     printf("====================================\n\n");
-    printf("Testing conv_artist_to_index:\n")
+    printf("Testing conv_artist_to_index:\n");
     struct song *songs = make_song("street spirit (fade out)", "zadiohead");
-    struct library **lib = make_library();
-    conv_artist_to_index(songs->artist);
+    printf("%c: %d",(songs->artist)[0],conv_artist_to_index(songs->artist));
+    printf("\n\n");
+
+    // add_song test
+    printf("====================================\n\n");
+    printf("Testing add_song:\n");
+    lib = add_song(lib, "street spirit (fade out)", "zadiohead");
+    lib = add_song(lib, "paranoid android", "radiohead");
+    lib = add_song(lib, "time", "pink floyd");
+    lib = add_song(lib, "yellow ledbetter", "pearl jam");
+    lib = add_song(lib, "even flow", "pearl jam");
+    lib = add_song(lib, "alive", "pearl jam");
+    lib = add_song(lib, "thunderstruck", "ac/dc");
+    print_library(lib);
+
 }
