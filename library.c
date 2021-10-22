@@ -50,9 +50,9 @@ void print_library(struct song **library) {
     }
 }
 
-/*void shuffle_library(struct song **library, int num_songs) {
-    return;
-}*/
+// void shuffle_library(struct song **library, int num_songs) {
+//     return;
+// }
 
 struct song ** delete_song(struct song **library, char *title, char *artist) {
     int ind = conv_artist_to_index(artist);
@@ -60,9 +60,13 @@ struct song ** delete_song(struct song **library, char *title, char *artist) {
     return library;
 }
 
-/*struct song ** clear_library(struct song **library) {
-    return;
-}*/
+struct song ** clear_library(struct song **library) {
+    int i;
+    for(i=0;i<26;i++){
+        library[i] = free_list(library[i]);
+    }
+    return library;
+}
 
 int conv_artist_to_index(char *artist) {
     return ((int)tolower(artist[0])) - 97;

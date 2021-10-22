@@ -258,4 +258,16 @@ void library_test() {
     lib = delete_song(lib,"alive", "pearl jam");
     print_library(lib);
     printf("\n");
+
+    // shuffle_library test
+    printf("====================================\n\n");
+    printf("Testing shuffle_library:\n");
+    printf("\n");
+
+    // clear_library test
+    printf("====================================\n\n");
+    printf("Testing clear_library:\n");
+    lib = clear_library(lib);
+    print_library(lib);
+    printf("\n");
 }
