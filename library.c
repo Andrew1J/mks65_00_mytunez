@@ -27,24 +27,25 @@ struct song * find_artist_in_library(struct song **library, char *artist) {
     return find_artists_song(library[ind], artist);
 }
 
-/*void print_letter(struct song **library, char letter) {
-    return;
+void print_letter(struct song **library, char letter) {
+    struct song * temp = library[letter - 97];
+    while(temp){
+        print_song(temp);
+        temp = temp->next;
+    }
+    printf("\n");
 }
 
 void print_artist(struct song **library, char *artist) {
     return;
-}*/
+}
 
 void print_library(struct song **library) {
     int i;
     for(i=0;i<26;i++){
         printf("Section %c of the library: \n",i+97);
-        struct song * temp = library[i];
-        while(temp){
-            print_song(temp);
-            temp = temp->next;
-        }
-        printf("\n");
+        char l = i+97;
+        print_letter(library,l);
     }
 }
 

@@ -239,4 +239,13 @@ void library_test() {
         printf("artist not found\n");
     }
     printf("\n");
+
+    // print_letter test
+    printf("====================================\n\n");
+    printf("Testing print_letter:\n");
+    printf("Printing Letter p:\n");
+    print_letter(lib,'p');
+    printf("Printing Letter c:\n");
+    print_letter(lib,'c');
+    printf("\n");
 }
