@@ -7,7 +7,7 @@
 
 // Creating and adding
 struct song ** make_library();
-struct song ** add_song(struct song **library, struct song *new_song);
+struct song ** add_song(struct song **library, char *title, char *artist);
 
 // Searching
 struct song * find_song_in_library(struct song **library, char *title, char *artist);
