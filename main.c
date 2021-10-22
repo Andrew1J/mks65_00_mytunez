@@ -179,4 +179,24 @@ void library_test() {
     lib = add_song(lib, "thunderstruck", "ac/dc");
     print_library(lib);
 
+    // find_song_in_library test
+    printf("====================================\n\n");
+    printf("Testing find_song_in_library:\n");
+    printf("looking for [pearl jam: even flow]\n");
+    struct song *search = find_song_in_library(lib,"even flow","pearl jam");
+    print_song(search);
+    if (search) {
+        printf("node found! %s: %s\n", search->artist, search->title);
+    } else {
+        printf("node not found\n");
+    }
+
+    printf("looking for [pearl jam: daughter]\n");
+    search = find_song_in_library(lib, "daughter", "pearl jam");
+    if (search) {
+        printf("node found! %s: %s\n", search->artist, search->title);
+    } else {
+        printf("node not found\n");
+    }
+    printf("\n");
 }

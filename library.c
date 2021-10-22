@@ -17,11 +17,12 @@ struct song ** add_song(struct song **library, char *title, char *artist) {
     return library;
 }
 
-/*struct song * find_song_in_library(struct song **library, char *title, char *artist) {
-    return;
+struct song * find_song_in_library(struct song **library, char *title, char *artist) {
+    int ind = conv_artist_to_index(artist);
+    return find_song(library[ind], title, artist);
 }
 
-struct song * find_artist_in_library(struct song **library, char *artist) {
+/*struct song * find_artist_in_library(struct song **library, char *artist) {
     return;
 }
 
@@ -35,13 +36,14 @@ void print_artist(struct song **library, char *artist) {
 
 void print_library(struct song **library) {
     int i;
-    for(i=0;i<27;i++){
+    for(i=0;i<26;i++){
         printf("Section %c of the library: \n",i+97);
-        while(library[i]){
-            print_song(library[i]);
-            library[i] = library[i]->next;
+        struct song * temp = library[i];
+        while(temp){
+            print_song(temp);
+            temp = temp->next;
         }
-        printf("\n");  
+        printf("\n");
     }
 }
 
