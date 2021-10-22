@@ -23,4 +23,7 @@ void shuffle_library(struct song **library, int num_songs);
 struct song ** delete_song(struct song **library, char *title, char *artist);
 struct song ** clear_library(struct song **library);
 
+// Helper Functions
+int conv_artist_to_index(char *artist);
+
 #endif

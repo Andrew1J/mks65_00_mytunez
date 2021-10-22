@@ -41,3 +41,7 @@ struct song ** delete_song(struct song **library, char *title, char *artist) {
 struct song ** clear_library(struct song **library) {
     return;
 }
+
+int conv_artist_to_index(char *artist) {
+    return 0;
+}
