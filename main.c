@@ -10,7 +10,7 @@ void library_test();
 
 
 int main() {
-    linked_list_test();
+    //linked_list_test();
     library_test();
 
     return 0;
@@ -148,5 +148,11 @@ void linked_list_test() {
 
 // Tests for the library
 void library_test() {
-    return;
+
+    // conv_artist_to_index test
+    printf("====================================\n\n");
+    printf("Testing conv_artist_to_index:\n")
+    struct song *songs = make_song("street spirit (fade out)", "zadiohead");
+    struct library **lib = make_library();
+    conv_artist_to_index(songs->artist);
 }

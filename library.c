@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include <ctype.h>
 #include "songs.h"
 #include "library.h"
 
@@ -7,10 +9,12 @@ struct song ** make_library() {
 }
 
 struct song ** add_song(struct song **library, char *title, char *artist) {
-    return;
+    struct song *s = make_song(title,artist);
+
+    return library;
 }
 
-struct song * find_song_in_library(struct song **library, char *title, char *artist) {
+/*struct song * find_song_in_library(struct song **library, char *title, char *artist) {
     return;
 }
 
@@ -40,8 +44,9 @@ struct song ** delete_song(struct song **library, char *title, char *artist) {
 
 struct song ** clear_library(struct song **library) {
     return;
-}
+}*/
 
 int conv_artist_to_index(char *artist) {
+    printf("%d\n",((int)tolower(artist[0])) - 97);
     return 0;
 }
