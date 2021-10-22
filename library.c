@@ -51,13 +51,15 @@ void print_library(struct song **library) {
 
 /*void shuffle_library(struct song **library, int num_songs) {
     return;
-}
+}*/
 
 struct song ** delete_song(struct song **library, char *title, char *artist) {
-    return;
+    int ind = conv_artist_to_index(artist);
+    library[ind] = remove_song(library[ind], title, artist);
+    return library;
 }
 
-struct song ** clear_library(struct song **library) {
+/*struct song ** clear_library(struct song **library) {
     return;
 }*/
 
