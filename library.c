@@ -116,9 +116,11 @@ struct song ** clear_library(struct song **library) {
 
 // Returns the index of the correct category
 // for a given artist
-//
-// TODO:
-// errors for non-alpha characters
 int conv_artist_to_index(char *artist) {
-    return ((int) tolower(artist[0])) - 97;
+    if (isalpha(artist[0])) {
+        return ((int) tolower(artist[0])) - 97;
+    }
+    else {
+        return 26;
+    }
 }
