@@ -95,8 +95,20 @@ void print_library(struct song **library) {
 
 
 // returns a series of randomly chosen songs
+//
+// YOU MUST SEED THE RNG BEFORE CALLING
 void shuffle_library(struct song **library, int num_songs) {
-    return;
+    struct song *rand_list = 0;
+
+    int i;
+    for (i = 0; i < num_songs; i++) {
+        while (!rand_list) {
+            rand_list = library[rand() % 27];
+        }
+
+        print_song(random_song(rand_list));
+        rand_list = 0;
+    }
 }
 
 

@@ -10,6 +10,8 @@ void library_test();
 
 
 int main() {
+    srand(time(NULL));
+
     //linked_list_test();
     library_test();
 
@@ -297,11 +299,6 @@ void library_test() {
     printf("\n");
 
 
-    // shuffle_library test
-    printf("====================================\n\n");
-    printf("Testing shuffle_library:\n");
-    printf("\n");
-
     // clear_library test
     printf("====================================\n\n");
     printf("Testing clear_library:\n");
@@ -309,5 +306,42 @@ void library_test() {
     lib = clear_library(lib);
     print_library(lib);
 
+    printf("\n");
+
+
+    // re-add songs to library
+    printf("====================================\n\n");
+    printf("Adding songs to empty library:\n");
+
+    lib = add_song(lib, "street spirit (fade out)", "zadiohead");
+    lib = add_song(lib, "paranoid android", "radiohead");
+    lib = add_song(lib, "time", "pink floyd");
+    lib = add_song(lib, "yellow ledbetter", "pearl jam");
+    lib = add_song(lib, "even flow", "pearl jam");
+    lib = add_song(lib, "alive", "pearl jam");
+    lib = add_song(lib, "thunderstruck", "ac/dc");
+    lib = add_song(lib, "bruh moment", "$ike eki$");
+    lib = add_song(lib, "Gucci Gang", "Lil Pump");
+    lib = add_song(lib, "Love Again", "Dua Lipa");
+    lib = add_song(lib, "Dollars", "Crankdat + Bryce Vine");
+    lib = add_song(lib, "Shivers", "Ed Sheeran");
+    lib = add_song(lib, "STAY [Explicit]", "The Kid LAROI + Justin Beiber");
+    lib = add_song(lib, "Bad Habits", "Ed Sheeran");
+    lib = add_song(lib, "Who's In Your Head", "Jonas Brothers");
+    lib = add_song(lib, "Levitating (feat. DaBaby)", "Dua Lipa feat. DaBaby");
+    lib = add_song(lib, "Kiss Me More [Explicit]", "Doja Cat feat. SZA");
+    lib = add_song(lib, "traitor", "Olivia Rodrigo");
+    lib = add_song(lib, "Happier Than Ever (Edit) [Explicit]", "Billie Eilish");
+    lib = add_song(lib, "4U", "Aero Chord");
+    lib = add_song(lib, "Be Free", "Aero Chord");
+    lib = add_song(lib, "The 90S", "Aero Chord");
+
+    print_library(lib);
+
+    // shuffle_library test
+    printf("====================================\n\n");
+    printf("Testing shuffle_library:\n");
+    printf("Printing 5 random songs:\n");
+    shuffle_library(lib, 5);
     printf("\n");
 }
