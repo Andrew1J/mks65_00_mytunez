@@ -116,7 +116,7 @@ struct song * remove_song(struct song *front, char *t, char *a) {
 }
 
 
-// Frees list
+// Frees list and returns null
 struct song * free_list(struct song *s) {
     struct song *temp;
 

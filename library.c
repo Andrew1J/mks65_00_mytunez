@@ -83,9 +83,9 @@ void print_library(struct song **library) {
 
 
 // returns a series of randomly chosen songs
-// void shuffle_library(struct song **library, int num_songs) {
-//     return;
-// }
+void shuffle_library(struct song **library, int num_songs) {
+    return;
+}
 
 
 // deletes a song from the library
