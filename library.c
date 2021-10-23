@@ -68,17 +68,29 @@ void print_artist(struct song **library, char *artist) {
 
 
 // prints the contents of the entire library
+// only prints out categores that actually contain songs
 void print_library(struct song **library) {
     int i;
+    int printed = 0;
 
     for (i = 0; i < 26; i++){
-        printf("%c: ", i + 97);
-        char l = i + 97;
-        print_letter(library, l);
+        if (library[i]) {
+            printed = 1;
+            printf("%c: ", i + 97);
+            char l = i + 97;
+            print_letter(library, l);
+        }
     }
 
-    printf("Other: ");
-    print_letter(library, '$');  // kinda dumb and hacky but whatever
+    if (library[26]) {
+        printed = 1;
+        printf("Other: ");
+        print_letter(library, '$');  // kinda dumb and hacky but whatever
+    }
+
+    if (!printed) {
+        printf("(empty)");
+    }
 }
 
 
