@@ -12,7 +12,7 @@ void library_test();
 int main() {
     srand(time(NULL));
 
-    //linked_list_test();
+    linked_list_test();
     library_test();
 
     return 0;
@@ -335,8 +335,25 @@ void library_test() {
     lib = add_song(lib, "4U", "Aero Chord");
     lib = add_song(lib, "Be Free", "Aero Chord");
     lib = add_song(lib, "The 90S", "Aero Chord");
+    lib = add_song(lib, "Testnig1234", "431 Brothers");
 
     print_library(lib);
+
+    // print_artist test
+    printf("====================================\n\n");
+    printf("Testing print_artist:\n");
+
+    printf("Printing [pearl jam]:\n");
+    print_artist(lib, "pearl jam");
+
+    printf("\nPrinting [Aero Chord]:\n");
+    print_artist(lib, "Aero Chord");
+
+    printf("\nPrinting [XNDA]:\n");
+    print_artist(lib, "XNDA");
+
+    printf("\n");
+
 
     // shuffle_library test
     printf("====================================\n\n");

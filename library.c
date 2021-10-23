@@ -63,7 +63,19 @@ void print_letter(struct song **library, char letter) {
 
 // prints out all the songs of a certain artist
 void print_artist(struct song **library, char *artist) {
-    return;
+    struct song *category = library[conv_artist_to_index(artist)];
+
+    printf("%s: ", artist);
+
+    while (category) {
+        if (!strcmp(category->artist, artist)) {
+            printf("{%s, %s} ", category->artist, category->title);
+        }
+
+        category = category->next;
+    }
+
+    printf("\n");
 }
 
 
