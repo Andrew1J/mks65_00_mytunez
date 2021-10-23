@@ -184,6 +184,7 @@ void library_test() {
     lib = add_song(lib, "even flow", "pearl jam");
     lib = add_song(lib, "alive", "pearl jam");
     lib = add_song(lib, "thunderstruck", "ac/dc");
+    lib = add_song(lib, "bruh moment", "$ike eki$");
     
     print_library(lib);
 
@@ -210,6 +211,15 @@ void library_test() {
         printf("node not found\n");
     }
     printf("\n");
+
+    printf("looking for [$ike eki$: bruh moment]\n");
+    search = find_song_in_library(lib, "bruh moment", "$ike eki$");
+    if (search) {
+        printf("node found! %s: %s\n", search->artist, search->title);
+        printf("\n");
+    } else {
+        printf("node not found\n");
+    }
 
 
     // find_artist_in_library test
@@ -249,6 +259,15 @@ void library_test() {
         printf("artist not found\n");
     }
     printf("\n");
+
+    printf("looking for [$ike eki$: bruh moment]\n");
+    search = find_artist_in_library(lib, "$ike eki$");
+    if (search) {
+        printf("node found! %s: %s\n", search->artist, search->title);
+        printf("\n");
+    } else {
+        printf("node not found\n");
+    }
 
 
     // print_letter test

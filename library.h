@@ -25,5 +25,6 @@ struct song ** clear_library(struct song **library);
 
 // Helper Functions
 int conv_artist_to_index(char *artist);
+int conv_char_to_index(char c);
 
 #endif

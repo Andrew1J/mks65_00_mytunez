@@ -47,9 +47,8 @@ struct song * find_artist_in_library(struct song **library, char *artist) {
 //
 // TODO:
 // could call print_list from songs.h
-// doesn't work for symbols
 void print_letter(struct song **library, char letter) {
-    struct song * temp = library[letter - 97];
+    struct song * temp = library[conv_char_to_index(letter)];
 
     printf("[ ");
 
@@ -69,17 +68,17 @@ void print_artist(struct song **library, char *artist) {
 
 
 // prints the contents of the entire library
-//
-// TODO:
-// doesn't print the symbols catagory
 void print_library(struct song **library) {
     int i;
 
-    for(i = 0; i < 26; i++){
+    for (i = 0; i < 26; i++){
         printf("%c: ", i + 97);
         char l = i + 97;
         print_letter(library, l);
     }
+
+    printf("Other: ");
+    print_letter(library, '$');  // kinda dumb and hacky but whatever
 }
 
 
@@ -114,8 +113,15 @@ struct song ** clear_library(struct song **library) {
 // Returns the index of the correct category
 // for a given artist
 int conv_artist_to_index(char *artist) {
-    if (isalpha(artist[0])) {
-        return ((int) tolower(artist[0])) - 97;
+    return conv_char_to_index(artist[0]);
+}
+
+
+// Returns the index of the correct category
+// for a given character
+int conv_char_to_index(char c) {
+    if (isalpha(c)) {
+        return ((int) tolower(c)) - 97;
     }
     else {
         return 26;
