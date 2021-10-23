@@ -157,19 +157,26 @@ void linked_list_test() {
 
 // Tests for the library
 void library_test() {
+    struct song **lib = make_library();
 
-    struct library **lib = make_library();
 
     // conv_artist_to_index test
     printf("====================================\n\n");
     printf("Testing conv_artist_to_index:\n");
-    struct song *songs = make_song("street spirit (fade out)", "zadiohead");
-    printf("%c: %d",(songs->artist)[0],conv_artist_to_index(songs->artist));
-    printf("\n\n");
+
+    struct song *z_test = make_song("street spirit (fade out)", "zadiohead");
+    printf("%c: %d\n", (z_test->artist)[0], conv_artist_to_index(z_test->artist));
+
+    struct song *symbol_test = make_song("testing a symbol", "$ike");
+    printf("%c: %d\n", (symbol_test->artist)[0], conv_artist_to_index(symbol_test->artist));
+
+    printf("\n");
+
 
     // add_song test
     printf("====================================\n\n");
     printf("Testing add_song:\n");
+    
     lib = add_song(lib, "street spirit (fade out)", "zadiohead");
     lib = add_song(lib, "paranoid android", "radiohead");
     lib = add_song(lib, "time", "pink floyd");
@@ -177,14 +184,16 @@ void library_test() {
     lib = add_song(lib, "even flow", "pearl jam");
     lib = add_song(lib, "alive", "pearl jam");
     lib = add_song(lib, "thunderstruck", "ac/dc");
+    
     print_library(lib);
+
 
     // find_song_in_library test
     printf("====================================\n\n");
     printf("Testing find_song_in_library:\n");
+
     printf("looking for [pearl jam: even flow]\n");
-    struct song *search = find_song_in_library(lib,"even flow","pearl jam");
-    print_song(search);
+    struct song *search = find_song_in_library(lib, "even flow", "pearl jam");
     if (search) {
         printf("node found! %s: %s\n", search->artist, search->title);
         printf("\n");
@@ -202,12 +211,13 @@ void library_test() {
     }
     printf("\n");
 
+
     // find_artist_in_library test
     printf("====================================\n\n");
     printf("Testing find_artist_in_library:\n");
+
     printf("looking for [pink floyd]\n");
     search = find_artist_in_library(lib, "pink floyd");
-    print_song(search);
     if (search) {
         printf("artist found! ");
         print_list(search);
@@ -240,24 +250,33 @@ void library_test() {
     }
     printf("\n");
 
+
     // print_letter test
     printf("====================================\n\n");
     printf("Testing print_letter:\n");
+
     printf("Printing Letter p:\n");
-    print_letter(lib,'p');
+    print_letter(lib, 'p');
+    
     printf("Printing Letter c:\n");
-    print_letter(lib,'c');
+    print_letter(lib, 'c');
     printf("\n");
+
 
     // delete_song test
     printf("====================================\n\n");
     printf("Testing delete_song:\n");
+
     printf("Removing [pearl jam, yellow ledbetter]:\n");
-    lib = delete_song(lib,"yellow ledbetter", "pearl jam");
-    printf("Removing [pearl jam, yellow ledbetter]:\n");
-    lib = delete_song(lib,"alive", "pearl jam");
+    lib = delete_song(lib, "yellow ledbetter", "pearl jam");
+    print_library(lib);
+
+    printf("\nRemoving [pearl jam, alive]:\n");
+    lib = delete_song(lib, "alive", "pearl jam");
+
     print_library(lib);
     printf("\n");
+
 
     // shuffle_library test
     printf("====================================\n\n");
@@ -267,7 +286,9 @@ void library_test() {
     // clear_library test
     printf("====================================\n\n");
     printf("Testing clear_library:\n");
+
     lib = clear_library(lib);
     print_library(lib);
+
     printf("\n");
 }
