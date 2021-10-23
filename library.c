@@ -100,13 +100,10 @@ struct song ** delete_song(struct song **library, char *title, char *artist) {
 
 
 // clears the entire library
-//
-// TODO:
-// doesn't clear the symbols category
 struct song ** clear_library(struct song **library) {
     int i;
 
-    for (i = 0; i < 26; i++){
+    for (i = 0; i < 27; i++){
         library[i] = free_list(library[i]);
     }
 
