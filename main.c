@@ -21,6 +21,8 @@ int main() {
 
 // Tests for the linked list part
 void linked_list_test() {
+    printf("LINKED LIST TESTS\n");
+
     // insert_front tests
     printf("====================================\n\n");
     printf("Testing insert_front:\n");
@@ -71,7 +73,7 @@ void linked_list_test() {
         printf("node not found\n");
     }
 
-    printf("looking for [pearl jam: daughter]\n");
+    printf("\nlooking for [pearl jam: daughter]\n");
     search = find_song(songs, "daughter", "pearl jam");
     if (search) {
         printf("node found! %s: %s\n", search->artist, search->title);
@@ -83,6 +85,7 @@ void linked_list_test() {
     // find_artists_song tests
     printf("====================================\n\n");
     printf("Testing find_artists_song:\n");
+
     printf("looking for [pink floyd]\n");
     search = find_artists_song(songs, "pink floyd");
     if (search) {
@@ -93,7 +96,7 @@ void linked_list_test() {
         printf("artist not found\n");
     }
 
-    printf("looking for [pearl jam]\n");
+    printf("\nlooking for [pearl jam]\n");
     search = find_artists_song(songs, "pearl jam");
     if (search) {
         printf("artist found! ");
@@ -103,7 +106,7 @@ void linked_list_test() {
         printf("artist not found\n");
     }
 
-    printf("looking for [presidents of the united states of america]\n");
+    printf("\nlooking for [presidents of the united states of america]\n");
     search = find_artists_song(songs, "presidents of the united states of america");
     if (search) {
         printf("artist found! ");
@@ -139,26 +142,46 @@ void linked_list_test() {
     printf("Testing random_song:\n");
     printf("List of Songs:\n");
     print_list(songs);
-    printf("\nRandom Song:\n");
+    printf("\nRandom Songs:\n");
+    print_song(random_song(songs));
+    print_song(random_song(songs));
     print_song(random_song(songs));
     printf("\n");
+
 
     // remove_song tests
     printf("====================================\n\n");
     printf("Testing remove_song:\n");
+
     printf("List of Songs:\n");
     print_list(songs);
     printf("\n");
-    printf("List With Removed Song:\n");
+
+    printf("Removing [pearl jam, yellow ledbetter");
     songs = remove_song(songs,"yellow ledbetter", "pearl jam");
+
+    printf("List With Removed Song:\n");
     print_list(songs);
+
     printf("\n");
 
+
+    // free_list tests
+    printf("====================================\n\n");
+    printf("Testing free_list:\n");
+
+    songs = free_list(songs);
+
+    printf("Freed list:\n");
+    print_list(songs);
+
+    printf("\n");
 }
 
 
 // Tests for the library
 void library_test() {
+    printf("MUSIC LIBRARY TESTS\n");
     struct song **lib = make_library();
 
 
